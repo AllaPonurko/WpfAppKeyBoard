@@ -24,5 +24,10 @@ namespace WpfAppKeyBoard
         {
             InitializeComponent();
         }
+        public class KeyHandler
+        {
+            public List<Button> buttons = new List<Button>();
+           
+        }
     }
 }
