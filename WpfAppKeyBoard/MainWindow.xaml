@@ -22,7 +22,7 @@
             </Button.Effect>
         </Button>
       
-        <Button x:Name="btn_" Content="'" HorizontalAlignment="Left" Grid.Row="2" Background="Coral" VerticalAlignment="Top" RenderTransformOrigin="0.483,2.439" Height="42" Margin="40,9,0,0" Width="40">
+        <Button x:Name="btn_" Content="'" HorizontalAlignment="Left" Grid.Row="2" Background="Coral" VerticalAlignment="Top" RenderTransformOrigin="0.483,2.439" Height="42" Margin="40,9,0,0" Width="40" Click="btn__Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -52,7 +52,7 @@
         <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Grid.Row="2" Background="Fuchsia" VerticalAlignment="Center" RenderTransformOrigin="0.483,2.439" Height="42" Margin="360,0,0,0" Width="40"/>
         <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Grid.Row="2" Background="Yellow" VerticalAlignment="Center" RenderTransformOrigin="0.483,2.439" Height="42" Margin="405,0,0,0" Width="40"/>
         <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Grid.Row="2" Background="Coral" VerticalAlignment="Center" RenderTransformOrigin="0.483,2.439" Height="42" Margin="450,0,0,0" Width="40"/>
-        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Grid.Row="2" Background="LightGreen" VerticalAlignment="Center" RenderTransformOrigin="0.483,2.439" Height="42" Margin="495,0,0,0" Width="40"/>
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Grid.Row="2" Background="LightGreen" VerticalAlignment="Center" RenderTransformOrigin="0.483,2.439" Height="42" Margin="495,0,0,0" Width="40" />
         <Button x:Name="btnSubstruction" Content="-" HorizontalAlignment="Left" Grid.Row="2" Background="LightGreen" VerticalAlignment="Center" RenderTransformOrigin="0.483,2.439" Height="42" Margin="540,0,0,0" Width="40"/>
         <Button x:Name="btnBackSpace" Content="BackSpace" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" RenderTransformOrigin="0.483,2.439" Height="42" Margin="630,0,0,0" Width="160"/>
         <Button x:Name="btnTab" Content="Tab" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" RenderTransformOrigin="0.483,2.439" Height="42" Width="65" />
