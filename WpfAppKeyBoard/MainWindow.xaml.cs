@@ -70,6 +70,8 @@ namespace WpfAppKeyBoard
             keyHandler.buttons.Add(btnSpace);
             keyHandler.buttons.Add(btnSubstruction);
             keyHandler.buttons.Add(btn_);
+            //this.AddHandler(Button.Click, new RoutedEventHandler(DoSomething));
+            btn_finish.IsEnabled = false;
         }
         public class KeyHandler
         {
@@ -80,27 +82,159 @@ namespace WpfAppKeyBoard
                 buttons = new List<Button>();
             }
         }
-        private void Button_Click()
+        
+        private void DoSomething(object sender, RoutedEventArgs e)
+        {foreach(var item in keyHandler.buttons)
+            if (e.OriginalSource == item)
+            { txt_enter.Text += item.Content.ToString(); }
+            //else if (e.OriginalSource == btn2)
+            //{ }
+            //else if (e.OriginalSource == btn3)
+            //{ }
+        }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            foreach(var item in keyHandler.buttons)
+            txt_enter.Text += btn1.Content.ToString();
+        }
+        
+        private void btn_start_Click(object sender, RoutedEventArgs e)
+        {
+            while(txt_dificult.Text==null)
             {
-              if(sign)
+                btn_start.IsEnabled=false;
+            }
+            if (txt_dificult.Text.Length>0)
+            {
+                int num;
+                num =Convert.ToInt32(txt_dificult.Text);
+            switch(num)
                 {
-                    txt_given.Text = item.Content.ToString();
+                    case 1:
+                        {
+                            txt_given.Text = null;
+                            for (int i=0;i< keyHandler.buttons.Count/10;i++)
+                           {
+                             txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                           }
+
+                        }
+                        break;
+                
+                case 2:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < keyHandler.buttons.Count / 9; i++)
+                             {
+                                txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                            }
+
+                        }
+                         break;
+                    case 3:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < keyHandler.buttons.Count / 8; i++)
+                            {
+                                txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                            }
+
+                        }
+                        break;
+                    case 4:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < keyHandler.buttons.Count / 7; i++)
+                            {
+                                txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                            }
+
+                        }
+                        break;
+                    case 5:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < keyHandler.buttons.Count / 6; i++)
+                            {
+                                txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                            }
+
+                        }
+                        break;
+                    case 6:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < keyHandler.buttons.Count / 5; i++)
+                            {
+                                txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                            }
+
+                        }
+                        break;
+                    case 7:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < keyHandler.buttons.Count / 4; i++)
+                            {
+                                txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                            }
+
+                        }
+                        break;
+                    case 8:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < keyHandler.buttons.Count / 3; i++)
+                            {
+                                txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                            }
+
+                        }
+                        break;
+                    case 9:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < keyHandler.buttons.Count / 2; i++)
+                            {
+                                txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                            }
+
+                        }
+                        break;
+                    case 10:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < keyHandler.buttons.Count ; i++)
+                            {
+                                txt_given.Text += keyHandler.buttons[i].Content;
+                                keyHandler.buttons.Reverse();
+                            }
+
+                        }
+                        break;
                 }
+                btn_finish.IsEnabled = true;
+
             }
         }
-        bool sign = false;
-        private void btn__Click(object sender, RoutedEventArgs e)
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            sign = true;
+            txt_dificult.Text =((int)slider.Value).ToString();
         }
 
-        private void btn0_Click(object sender, RoutedEventArgs e)
+        private void btn_finish_Click(object sender, RoutedEventArgs e)
         {
-            sign = true;
-        }
 
-        
+        }
     } 
 }
