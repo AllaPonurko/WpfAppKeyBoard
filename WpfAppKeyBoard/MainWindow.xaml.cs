@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace WpfAppKeyBoard
 {
@@ -24,7 +25,7 @@ namespace WpfAppKeyBoard
         public MainWindow()
         {
             InitializeComponent();
-       
+            
             keyHandler.buttons.Add(btn0);
             keyHandler.buttons.Add(btn1);
             keyHandler.buttons.Add(btn2);
@@ -72,6 +73,8 @@ namespace WpfAppKeyBoard
             keyHandler.buttons.Add(btn_);
             //this.AddHandler(Button.Click, new RoutedEventHandler(DoSomething));
             btn_finish.IsEnabled = false;
+            btnStart.IsEnabled = false;
+            txt_enter.IsEnabled = false;
         }
         public class KeyHandler
         {
@@ -248,19 +251,38 @@ namespace WpfAppKeyBoard
                         }
                         break;
                 }
-                btn_finish.IsEnabled = true;
+                btnStart.IsEnabled = true; 
 
             }
         }
-
+           DispatcherTimer timer = new DispatcherTimer();
+            
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             txt_dificult.Text =((int)slider.Value).ToString();
         }
-
+        DateTime timeStart = new DateTime();
+        DateTime timeFinish = new DateTime();
         private void btn_finish_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
+            timeFinish = DateTime.Now;
+            txtTime.Text = ((int)(timeFinish - timeStart).TotalSeconds).ToString();
+        }
 
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            txt_enter.IsEnabled = true;
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += timer_Tick;
+            timer.Start();
+            
+            btn_finish.IsEnabled = true;
+        }
+        void timer_Tick(object sender, EventArgs e)
+        {
+            txtTime.Text = DateTime.Now.ToLongTimeString();
+            timeStart = DateTime.Now;
         }
     } 
 }
