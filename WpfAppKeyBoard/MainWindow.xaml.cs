@@ -108,14 +108,31 @@ namespace WpfAppKeyBoard
             {
                 int num;
                 num =Convert.ToInt32(txt_dificult.Text);
+                Random rand = new Random();
             switch(num)
                 {
+                    case 0:
+                        {
+                            txt_given.Text = null;
+                            for (int i = 0; i < 20; i++)
+                            {if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16)
+                                    txt_given.Text += " ";
+                            else
+                                {
+                                    int n = rand.Next(11, keyHandler.buttons.Count - 20);
+                                    txt_given.Text += keyHandler.buttons[n].Content;
+                                }
+
+                            }
+                        }
+                        break;
                     case 1:
                         {
                             txt_given.Text = null;
-                            for (int i=0;i< keyHandler.buttons.Count/10;i++)
+                            for (int i=0;i< 20; i++)
                            {
-                             txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                             txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                            }
 
@@ -125,9 +142,10 @@ namespace WpfAppKeyBoard
                 case 2:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < keyHandler.buttons.Count / 9; i++)
+                            for (int i = 0; i < 30; i++)
                              {
-                                txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                             }
 
@@ -136,9 +154,10 @@ namespace WpfAppKeyBoard
                     case 3:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < keyHandler.buttons.Count / 8; i++)
+                            for (int i = 0; i < 35; i++)
                             {
-                                txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                             }
 
@@ -147,9 +166,10 @@ namespace WpfAppKeyBoard
                     case 4:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < keyHandler.buttons.Count / 7; i++)
+                            for (int i = 0; i < 40; i++)
                             {
-                                txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                             }
 
@@ -158,9 +178,10 @@ namespace WpfAppKeyBoard
                     case 5:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < keyHandler.buttons.Count / 6; i++)
+                            for (int i = 0; i<45; i++)
                             {
-                                txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                             }
 
@@ -169,9 +190,10 @@ namespace WpfAppKeyBoard
                     case 6:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < keyHandler.buttons.Count / 5; i++)
+                            for (int i = 0; i < 50; i++)
                             {
-                                txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                             }
 
@@ -180,9 +202,10 @@ namespace WpfAppKeyBoard
                     case 7:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < keyHandler.buttons.Count / 4; i++)
+                            for (int i = 0; i < 55; i++)
                             {
-                                txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                             }
 
@@ -191,9 +214,10 @@ namespace WpfAppKeyBoard
                     case 8:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < keyHandler.buttons.Count / 3; i++)
+                            for (int i = 0; i < 60; i++)
                             {
-                                txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                             }
 
@@ -202,9 +226,10 @@ namespace WpfAppKeyBoard
                     case 9:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < keyHandler.buttons.Count / 2; i++)
+                            for (int i = 0; i <65; i++)
                             {
-                                txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                             }
 
@@ -213,9 +238,10 @@ namespace WpfAppKeyBoard
                     case 10:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < keyHandler.buttons.Count ; i++)
+                            for (int i = 0; i < 70; i++)
                             {
-                                txt_given.Text += keyHandler.buttons[i].Content;
+                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
                             }
 
