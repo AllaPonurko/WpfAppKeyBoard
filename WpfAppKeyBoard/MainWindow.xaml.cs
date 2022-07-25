@@ -255,19 +255,19 @@ namespace WpfAppKeyBoard
 
             }
         }
-           DispatcherTimer timer = new DispatcherTimer();
+          
             
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             txt_dificult.Text =((int)slider.Value).ToString();
         }
+        DispatcherTimer timer = new DispatcherTimer();
         DateTime timeStart = new DateTime();
         DateTime timeFinish = new DateTime();
         private void btn_finish_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            timeFinish = DateTime.Now;
-            txtTime.Text = ((int)(timeFinish - timeStart).TotalSeconds).ToString();
+
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
@@ -276,13 +276,15 @@ namespace WpfAppKeyBoard
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
             timer.Start();
-            
+            timeStart = DateTime.Now;
             btn_finish.IsEnabled = true;
         }
         void timer_Tick(object sender, EventArgs e)
         {
-            txtTime.Text = DateTime.Now.ToLongTimeString();
-            timeStart = DateTime.Now;
+            timeFinish = DateTime.Now;
+            txtTime.Text = ((int)(timeFinish - timeStart).TotalSeconds).ToString();
+            /*DateTime.Now.ToLongTimeString();*/
+
         }
     } 
 }

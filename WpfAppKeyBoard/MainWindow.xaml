@@ -105,16 +105,17 @@
         <Button x:Name="btnSpace" Content=" " HorizontalAlignment="Left" Grid.Row="6" Background="Bisque" VerticalAlignment="Center" RenderTransformOrigin="0.483,2.439" Height="42" Width="330" Margin="230,0,0,0" />
         <TextBox x:Name="txt_given" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="315" Height="62" Background="#FF62FF00" Margin="-5,0,0,0" FontSize="20" FontWeight="Bold"/>
         <TextBox x:Name="txt_enter" HorizontalAlignment="Left" Margin="315,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="485" Height="62" Background="#FF00B4FF" FontSize="18"/>
-        <Label Content="Speed" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="55" Height="26"/>
+        <Label Content="Time" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="55" Height="26"/>
         <TextBox x:Name="txtTime" HorizontalAlignment="Left" Margin="65,14,0,30" TextWrapping="Wrap" Width="120"/>
         <Label Content="chars/min" HorizontalAlignment="Left" Margin="205,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.73,1.982" Height="26" Width="62"/>
         <TextBox HorizontalAlignment="Left" Margin="285,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="35"/>
         <Slider x:Name="slider" HorizontalAlignment="Left" Margin="558,9,0,0" VerticalAlignment="Top" Width="120" Height="18" ValueChanged="Slider_ValueChanged"/>
-        <Button x:Name="btn_start" Content="Set" HorizontalAlignment="Left" Margin="435,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.658,1.821" Width="97" Height="20" Click="btn_start_Click"/>
+        <Button x:Name="btn_start" Content="Set" HorizontalAlignment="Left" Margin="435,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,1.821" Width="97" Height="20" Click="btn_start_Click"/>
         <Button x:Name="btn_finish" Content="Finish" HorizontalAlignment="Left" Margin="666,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,1.821" Width="122" Height="20" Click="btn_finish_Click"/>
         <Label Content="Difficulty" HorizontalAlignment="Left" Margin="430,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.553,0.425" Height="26" Width="57"/>
         <TextBox x:Name="txt_dificult" HorizontalAlignment="Left" Margin="498,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" RenderTransformOrigin="0.254,0.81"/>
         <RadioButton Content="Case Sensitive" Margin="683,7,0,0" VerticalAlignment="Top" Height="22" HorizontalAlignment="Left" Width="85"/>
         <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="540,51,0,0" VerticalAlignment="Top" Width="121" Click="btnStart_Click"/>
+        <Label Content="seconds" HorizontalAlignment="Left" Margin="6,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.447,-0.191"/>
     </Grid>
 </Window>
