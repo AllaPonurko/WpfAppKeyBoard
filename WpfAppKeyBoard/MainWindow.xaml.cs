@@ -71,7 +71,8 @@ namespace WpfAppKeyBoard
             keyHandler.buttons.Add(btnSpace);
             keyHandler.buttons.Add(btnSubstruction);
             keyHandler.buttons.Add(btn_);
-            //this.AddHandler(Button.Click, new RoutedEventHandler(DoSomething));
+            
+            //GridMain.AddHandler(Button.ClickEvent, new RoutedEventHandler(DoSomething));
             btn_finish.IsEnabled = false;
             btnStart.IsEnabled = false;
             txt_enter.IsEnabled = false;
@@ -85,20 +86,18 @@ namespace WpfAppKeyBoard
                 buttons = new List<Button>();
             }
         }
-        
+        bool Registr = false;
         private void DoSomething(object sender, RoutedEventArgs e)
-        {foreach(var item in keyHandler.buttons)
+        {
+            foreach(var item in keyHandler.buttons)
             if (e.OriginalSource == item)
             { txt_enter.Text += item.Content.ToString(); }
-            //else if (e.OriginalSource == btn2)
-            //{ }
-            //else if (e.OriginalSource == btn3)
-            //{ }
+            
         }
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            txt_enter.Text += btn1.Content.ToString();
+            //txt_enter.Text += btn1.Content.ToString();
         }
         
         private void btn_start_Click(object sender, RoutedEventArgs e)
@@ -107,6 +106,7 @@ namespace WpfAppKeyBoard
             {
                 btn_start.IsEnabled=false;
             }
+            //if(rbtn.IsChecked==true)
             if (txt_dificult.Text.Length>0)
             {
                 int num;
@@ -124,8 +124,15 @@ namespace WpfAppKeyBoard
                                 {
                                     int n = rand.Next(11, keyHandler.buttons.Count - 20);
                                     txt_given.Text += keyHandler.buttons[n].Content;
+                                        
                                 }
 
+                            }
+                            if(Registr==true)
+                            {
+                                string temp = txt_given.Text;
+                                temp.ToUpper();
+                                txt_given.Text = temp;
                             }
                         }
                         break;
@@ -134,9 +141,15 @@ namespace WpfAppKeyBoard
                             txt_given.Text = null;
                             for (int i=0;i< 20; i++)
                            {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
-                             txt_given.Text += keyHandler.buttons[n].Content;
-                                keyHandler.buttons.Reverse();
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(9, keyHandler.buttons.Count - 15);
+                                     txt_given.Text += keyHandler.buttons[n].Content;
+                                       keyHandler.buttons.Reverse();
+                                }
+                                
                            }
 
                         }
@@ -145,11 +158,18 @@ namespace WpfAppKeyBoard
                 case 2:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < 30; i++)
+                            for (int i = 0; i < 25; i++)
                              {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16||i==20)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(8, keyHandler.buttons.Count - 14);
                                 txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
+
+                                }
+                                    
                             }
 
                         }
@@ -157,11 +177,16 @@ namespace WpfAppKeyBoard
                     case 3:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < 35; i++)
+                            for (int i = 0; i < 30; i++)
                             {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
-                                txt_given.Text += keyHandler.buttons[n].Content;
-                                keyHandler.buttons.Reverse();
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16 || i == 20||i==26)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(7, keyHandler.buttons.Count - 12);
+                                    txt_given.Text += keyHandler.buttons[n].Content;
+                                    keyHandler.buttons.Reverse();
+                                }
                             }
 
                         }
@@ -169,11 +194,17 @@ namespace WpfAppKeyBoard
                     case 4:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < 40; i++)
+                            for (int i = 0; i < 35; i++)
                             {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
-                                txt_given.Text += keyHandler.buttons[n].Content;
-                                keyHandler.buttons.Reverse();
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16 || i == 20
+                                    || i == 26 || i == 31)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(6, keyHandler.buttons.Count - 10);
+                                    txt_given.Text += keyHandler.buttons[n].Content;
+                                    keyHandler.buttons.Reverse();
+                                }
                             }
 
                         }
@@ -181,11 +212,17 @@ namespace WpfAppKeyBoard
                     case 5:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i<45; i++)
+                            for (int i = 0; i<39; i++)
                             {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
-                                txt_given.Text += keyHandler.buttons[n].Content;
-                                keyHandler.buttons.Reverse();
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16 || i == 20
+                                    || i == 26 || i == 31 || i == 36)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(5, keyHandler.buttons.Count - 8);
+                                    txt_given.Text += keyHandler.buttons[n].Content;
+                                    keyHandler.buttons.Reverse();
+                                }
                             }
 
                         }
@@ -193,11 +230,19 @@ namespace WpfAppKeyBoard
                     case 6:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < 50; i++)
+                            for (int i = 0; i < 43; i++)
                             {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16 || i == 20
+                                    || i == 26 || i == 31 || i == 36)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(4, keyHandler.buttons.Count - 6);
                                 txt_given.Text += keyHandler.buttons[n].Content;
                                 keyHandler.buttons.Reverse();
+
+                                }
+                                    
                             }
 
                         }
@@ -205,11 +250,17 @@ namespace WpfAppKeyBoard
                     case 7:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < 55; i++)
+                            for (int i = 0; i < 48; i++)
                             {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
-                                txt_given.Text += keyHandler.buttons[n].Content;
-                                keyHandler.buttons.Reverse();
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16 || i == 20
+                                    || i == 26 || i == 31 || i == 36||i==42)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(3, keyHandler.buttons.Count - 4);
+                                    txt_given.Text += keyHandler.buttons[n].Content;
+                                    keyHandler.buttons.Reverse();
+                                }
                             }
 
                         }
@@ -217,11 +268,17 @@ namespace WpfAppKeyBoard
                     case 8:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < 60; i++)
+                            for (int i = 0; i < 52; i++)
                             {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
-                                txt_given.Text += keyHandler.buttons[n].Content;
-                                keyHandler.buttons.Reverse();
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16 || i == 20
+                                    || i == 26 || i == 31 || i == 36 || i == 45)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(2, keyHandler.buttons.Count - 3);
+                                    txt_given.Text += keyHandler.buttons[n].Content;
+                                    keyHandler.buttons.Reverse();
+                                }
                             }
 
                         }
@@ -229,11 +286,17 @@ namespace WpfAppKeyBoard
                     case 9:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i <65; i++)
+                            for (int i = 0; i <57; i++)
                             {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
-                                txt_given.Text += keyHandler.buttons[n].Content;
-                                keyHandler.buttons.Reverse();
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16 || i == 20
+                                    || i == 26 || i == 31 || i == 36 || i == 52)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(1, keyHandler.buttons.Count - 2);
+                                    txt_given.Text += keyHandler.buttons[n].Content;
+                                    keyHandler.buttons.Reverse();
+                                }
                             }
 
                         }
@@ -241,11 +304,17 @@ namespace WpfAppKeyBoard
                     case 10:
                         {
                             txt_given.Text = null;
-                            for (int i = 0; i < 70; i++)
+                            for (int i = 0; i < 60; i++)
                             {
-                                int n = rand.Next(0, keyHandler.buttons.Count - 1);
-                                txt_given.Text += keyHandler.buttons[n].Content;
-                                keyHandler.buttons.Reverse();
+                                if (i == 4 || i == 7 || i == 10 || i == 13 || i == 16 || i == 20
+                                    || i == 26 || i == 31 || i == 36||i==52)
+                                    txt_given.Text += " ";
+                                else
+                                {
+                                    int n = rand.Next(0, keyHandler.buttons.Count - 1);
+                                    txt_given.Text += keyHandler.buttons[n].Content;
+                                    keyHandler.buttons.Reverse();
+                                }
                             }
 
                         }
@@ -267,6 +336,27 @@ namespace WpfAppKeyBoard
         private void btn_finish_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
+            btnStart.IsEnabled = false;
+            chars.Content = "Fails";
+            if(string.Compare(txt_enter.Text, txt_given.Text) ==0)
+            {
+                txtCounter.Text = "0";
+            }
+            if (string.Compare(txt_enter.Text, txt_given.Text) != 0)
+            {
+                int count = 0;
+                int minLength = Math.Min(txt_enter.Text.Length, txt_given.Text.Length);
+                for(int i=0;i< minLength;i++)
+                {
+                    if (txt_enter.Text[i] != txt_given.Text[i])
+                    {
+                        count++;
+                        
+                    }
+                        
+                }
+                txtCounter.Text = count.ToString();
+            }
 
         }
 
@@ -285,6 +375,27 @@ namespace WpfAppKeyBoard
             txtTime.Text = ((int)(timeFinish - timeStart).TotalSeconds).ToString();
             /*DateTime.Now.ToLongTimeString();*/
 
+        }
+
+        private void btnCapsLocks_Click(object sender, RoutedEventArgs e)
+        {
+            Registr = true;
+        }
+
+        private void btnShift_Click(object sender, RoutedEventArgs e)
+        {
+            Registr = true;
+        }
+
+        private void btnShift1_Click(object sender, RoutedEventArgs e)
+        {
+            Registr = true;
+        }
+
+        private void btnBackSpace_Click(object sender, RoutedEventArgs e)
+        {
+            if (txt_enter.Text.Length != 0)
+                txt_enter.Text.Remove(txt_enter.Text.Length - 1);
         }
     } 
 }
